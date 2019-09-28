@@ -5,8 +5,8 @@
 ### Console Command
 | Command | Description | Status |
 | :---: | :---: | :---: |
-| `/8 consume private` | To receive a private message right before your consumables are about to expire. | Enabled by default. |
-| `/8 consume dungeon` | To receive a dungeon message right before your consumables are about to expire. | Enabled by default. |
+| `/8 consume private` | To notify you via private message if your consumables are about to expire. | Enabled by default. |
+| `/8 consume dungeon` | To notify you via dungeon message if your consumables are about to expire. | Enabled by default. |
 | `/8 consume add + abnormality id` | To add the desired abnormalities to the consumable list. |  |
 | `/8 consume remove + abnormality id` | To remove the desired abnormalities from the consumable list. |  |
 | `/8 consume clear` | To remove all added abnormalities from the consumable list. |  |
