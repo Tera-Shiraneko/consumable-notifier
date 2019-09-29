@@ -38,10 +38,10 @@ module.exports = function Consumable_Notifier(mod) {
                 search_status();
             }
             else if (!abnormality_info) {
-                command.message('[Error] The module can not find any abnormality data which is needed for adding the id to the consumable list.'.clr('ff1d00'));
+                command.message('[Warning] The module can not find any abnormality data which is needed for adding the id to the consumable list.'.clr('ff00ff'));
             }
             else if (abnormality_index != -1) {
-                command.message(`[Error] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | is already added to the consumable list.`.clr('ff1d00'));
+                command.message(`[Warning] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | is already added to the consumable list.`.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'remove' && arg_2 > 0) {
@@ -53,10 +53,10 @@ module.exports = function Consumable_Notifier(mod) {
                 search_status();
             }
             else if (!abnormality_info) {
-                command.message('[Error] The module can not find any abnormality data which is needed for removing the id from the consumable list.'.clr('ff1d00'));
+                command.message('[Warning] The module can not find any abnormality data which is needed for removing the id from the consumable list.'.clr('ff00ff'));
             }
             else if (abnormality_index === -1) {
-                command.message(`[Error] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | can not be found in the consumable list.`.clr('ff1d00'));
+                command.message(`[Warning] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | can not be found in the consumable list.`.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'clear') {
@@ -65,7 +65,7 @@ module.exports = function Consumable_Notifier(mod) {
                 command.message('[Settings] The consumable list is now cleared and can be reconfigured again to your liking.'.clr('009dff'));
                 search_status();
             } else {
-                command.message('[Error] Add an abnormality to the consumable list before trying to clear an empty consumable list.'.clr('ff1d00'));
+                command.message('[Warning] Add an abnormality to the consumable list before trying to clear an empty consumable list.'.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'show') {
@@ -75,11 +75,11 @@ module.exports = function Consumable_Notifier(mod) {
                     if (abnormality_info) {
                         command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | in the consumable list.`.clr('ffff00'));
                     } else {
-                        command.message('[Error] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff1d00'));
+                        command.message('[Warning] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff00ff'));
                     }
                 });
             } else {
-                command.message('[Error] Add an abnormality to the consumable list before trying to show an empty consumable list.'.clr('ff1d00'));
+                command.message('[Warning] Add an abnormality to the consumable list before trying to show an empty consumable list.'.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'debug') {
@@ -88,7 +88,7 @@ module.exports = function Consumable_Notifier(mod) {
                 if (abnormality_info) {
                     command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | applied on yourself.`.clr('ffff00'));
                 } else {
-                    command.message('[Error] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff1d00'));
+                    command.message('[Warning] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff00ff'));
                 }
             });
         }
