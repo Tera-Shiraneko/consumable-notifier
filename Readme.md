@@ -30,7 +30,7 @@
 
 - An list of things that can be edited can be found here. Only for experienced users.
 
-| Config Name | Description |
+| Name | Description |
 | :---: | :---: |
 | `consumable_list` | Here you can add or remove abnormality id's to the consumable list. |
 
