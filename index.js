@@ -85,9 +85,7 @@ module.exports = function Consumable_Notifier(mod) {
         else if (arg_1 === 'debug') {
             Object.values(player.abnormalities).forEach(abnormality => {
                 const abnormality_info = data.abnormalities.get(abnormality.id);
-                if (abnormality_info) {
-                    command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | applied on yourself.`.clr('ffff00'));
-                }
+                command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | applied on yourself.`.clr('ffff00'));
             });
         }
         else if (arg_1 === 'config') {
