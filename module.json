@@ -2,7 +2,7 @@
     "disableAutoUpdate": false,
     "name": "Consumable Notifier",
     "author": "Shalltearz",
-    "description": "Tera toolbox module which notifies you if your consumables are about to expire.",
+    "description": "Tera toolbox module which is notifying you if your consumables are about to expire.",
     "version": "1.0",
     "options": {
         "niceName": "Consumable Notifier",

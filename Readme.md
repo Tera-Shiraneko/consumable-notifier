@@ -1,4 +1,4 @@
-### Tera toolbox module which notifies you if your consumables are about to expire.
+### Tera toolbox module which is notifying you if your consumables are about to expire.
 
 ---
 
