@@ -87,8 +87,6 @@ module.exports = function Consumable_Notifier(mod) {
                 const abnormality_info = data.abnormalities.get(abnormality.id);
                 if (abnormality_info) {
                     command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | applied on yourself.`.clr('ffff00'));
-                } else {
-                    command.message('[Warning] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff00ff'));
                 }
             });
         }
