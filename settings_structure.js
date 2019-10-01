@@ -11,7 +11,7 @@ module.exports = [
     },
     {
         "key": "consumable_list",
-        "name": "Here you can add or remove abnormality id's to the consumable list.",
+        "name": "Add or remove abnormality id's to the consumable list.",
         "type": "string"
     }
 ];

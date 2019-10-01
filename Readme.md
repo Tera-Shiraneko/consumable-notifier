@@ -7,9 +7,9 @@
 | :---: | :---: | :---: |
 | `/8 consume private` | To notify you via private message if your consumables are about to expire. | Enabled by default. |
 | `/8 consume dungeon` | To notify you via dungeon message if your consumables are about to expire. | Enabled by default. |
-| `/8 consume add + abnormality id` | To add the desired abnormalities to the consumable list. |  |
-| `/8 consume remove + abnormality id` | To remove the desired abnormalities from the consumable list. |  |
-| `/8 consume clear` | To remove all added abnormalities from the consumable list. |  |
+| `/8 consume add + id` | To add the desired abnormality id's to the consumable list. |  |
+| `/8 consume remove + id` | To remove the desired abnormality id's from the consumable list. |  |
+| `/8 consume clear` | To remove all added abnormality id's from the consumable list. |  |
 | `/8 consume show` | To show all added abnormalities with their names and id's in your toolbox chat. |  |
 | `/8 consume debug` | To show all applied abnormalities with their names and id's in your toolbox chat. |  |
 
@@ -44,4 +44,5 @@
 
 ### Note
 - An list of the abnormalities which are currently added in the config file can be found here [Consumable Overview](https://github.com/Tera-Shiraneko/consumable-notifier/tree/master/Additional-Data).
+- In case of multiple abnormality id's in the config file or settings interface you need to seperate them with a comma.
 - The commands should be written without the plus just an space between it.
