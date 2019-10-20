@@ -1,12 +1,12 @@
 module.exports = [
     {
         "key": "private_message",
-        "name": "Notifies you via private message if your consumables are about to expire.",
+        "name": "Receive a private notification if your consumables are about to expire.",
         "type": "bool"
     },
     {
         "key": "dungeon_message",
-        "name": "Notifies you via dungeon message if your consumables are about to expire.",
+        "name": "Receive a dungeon notification if your consumables are about to expire.",
         "type": "bool"
     },
     {

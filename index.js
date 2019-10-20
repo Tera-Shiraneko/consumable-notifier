@@ -34,14 +34,14 @@ module.exports = function Consumable_Notifier(mod) {
             const abnormality_index = config.consumable_list.indexOf(abnormality_info.id);
             if (abnormality_info && abnormality_index === -1) {
                 config.consumable_list.push(abnormality_info.id);
-                command.message(`[Settings] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | has been added to the consumable list.`.clr('009dff'));
+                command.message(`[Settings] Abnormality ${abnormality_info.name} with the id ${abnormality_info.id} has been added to the consumable list.`.clr('009dff'));
                 search_status();
             }
             else if (!abnormality_info) {
                 command.message('[Warning] The module can not find any abnormality data which is needed for adding the id to the consumable list.'.clr('ff00ff'));
             }
             else if (abnormality_index != -1) {
-                command.message(`[Warning] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | is already added to the consumable list.`.clr('ff00ff'));
+                command.message(`[Warning] Abnormality ${abnormality_info.name} with the id ${abnormality_info.id} is already added to the consumable list.`.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'remove' && arg_2 > 0) {
@@ -49,14 +49,14 @@ module.exports = function Consumable_Notifier(mod) {
             const abnormality_index = config.consumable_list.indexOf(abnormality_info.id);
             if (abnormality_info && abnormality_index != -1) {
                 config.consumable_list.splice(abnormality_index, 1);
-                command.message(`[Settings] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | has been removed from the consumable list.`.clr('009dff'));
+                command.message(`[Settings] Abnormality ${abnormality_info.name} with the id ${abnormality_info.id} has been removed from the consumable list.`.clr('009dff'));
                 search_status();
             }
             else if (!abnormality_info) {
                 command.message('[Warning] The module can not find any abnormality data which is needed for removing the id from the consumable list.'.clr('ff00ff'));
             }
             else if (abnormality_index === -1) {
-                command.message(`[Warning] Abnormality | ${abnormality_info.name} | with the id | ${abnormality_info.id} | can not be found in the consumable list.`.clr('ff00ff'));
+                command.message(`[Warning] Abnormality ${abnormality_info.name} with the id ${abnormality_info.id} can not be found in the consumable list.`.clr('ff00ff'));
             }
         }
         else if (arg_1 === 'clear') {
@@ -73,7 +73,7 @@ module.exports = function Consumable_Notifier(mod) {
                 config.consumable_list.forEach(consumable => {
                     const abnormality_info = data.abnormalities.get(consumable);
                     if (abnormality_info) {
-                        command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | in the consumable list.`.clr('ffff00'));
+                        command.message(`[Info] Found ${abnormality_info.name} with the id ${abnormality_info.id} in the consumable list.`.clr('ffff00'));
                     } else {
                         command.message('[Warning] The module can not find any abnormality data which is needed for showing the name and id of the abnormality.'.clr('ff00ff'));
                     }
@@ -85,7 +85,7 @@ module.exports = function Consumable_Notifier(mod) {
         else if (arg_1 === 'debug') {
             Object.values(player.abnormalities).forEach(abnormality => {
                 const abnormality_info = data.abnormalities.get(abnormality.id);
-                command.message(`[Info] Found | ${abnormality_info.name} | with the id | ${abnormality_info.id} | applied on yourself.`.clr('ffff00'));
+                command.message(`[Info] Found ${abnormality_info.name} with the id ${abnormality_info.id} applied on yourself.`.clr('ffff00'));
             });
         }
         else if (arg_1 === 'config') {
@@ -109,67 +109,67 @@ module.exports = function Consumable_Notifier(mod) {
         stop_searching();
     });
 
-    const start_searching = () => {
+    function start_searching() {
         if ((config.private_message || config.dungeon_message) && config.consumable_list.length) {
             search_timer = mod.setInterval(active_abnormalities, 1000);
         }
-    };
+    }
 
-    const stop_searching = () => {
+    function stop_searching() {
         if (search_timer) {
             mod.clearInterval(search_timer);
             search_timer = null;
         }
-    };
+    }
 
-    const search_status = () => {
+    function search_status() {
         if ((config.private_message || config.dungeon_message) && config.consumable_list.length) {
             stop_searching();
             start_searching();
         } else {
             stop_searching();
         }
-    };
+    }
 
-    const message_status = () => {
+    function message_status() {
         if (!config.private_message && !config.dungeon_message) {
             mod.clearAllTimeouts(status_timer);
             current_consumables = [];
         }
-    };
+    }
 
-    const active_abnormalities = () => {
+    function active_abnormalities() {
         Object.values(player.abnormalities).forEach(abnormality => {
             compare_abnormalities(abnormality);
         });
-    };
+    }
 
-    const inactive_abnormalities = () => {
+    function inactive_abnormalities() {
         current_consumables.forEach(consumable => {
             const still_active = player.abnormalities[consumable];
             if (!still_active) {
-                send_message(`[Info] Consumable | ${data.abnormalities.get(consumable).name} | has expired.`.clr('ffff00'), consumable);
+                send_message(`[Info] Consumable ${data.abnormalities.get(consumable).name} has expired.`.clr('ffff00'), consumable);
                 const consumable_index = current_consumables.indexOf(consumable);
                 current_consumables.splice(consumable_index, 1);
                 search_status();
             }
         });
-    };
+    }
 
-    const compare_abnormalities = (info) => {
+    function compare_abnormalities(info) {
         const matching = config.consumable_list.some(consumable => consumable === info.id);
         if (matching && !current_consumables.includes(info.id)) {
             current_consumables.push(info.id);
             status_timer = mod.setTimeout(abnormality_status, info.remaining - 500, info);
         }
-    };
+    }
 
-    const abnormality_status = (info) => {
+    function abnormality_status(info) {
         const matching_id = current_consumables.find(consumable => consumable === info.id);
         if (!matching_id) return;
         Object.values(player.abnormalities).forEach(abnormality => {
             if (abnormality.id === matching_id && abnormality.remaining === info.remaining) {
-                send_message(`[Info] Consumable | ${info.data.name} | has expired.`.clr('ffff00'), info.id);
+                send_message(`[Info] Consumable ${info.data.name} has expired.`.clr('ffff00'), info.id);
                 const consumable_index = current_consumables.indexOf(info.id);
                 current_consumables.splice(consumable_index, 1);
                 search_status();
@@ -178,9 +178,9 @@ module.exports = function Consumable_Notifier(mod) {
                 status_timer = mod.setTimeout(abnormality_status, abnormality.remaining - 500, abnormality);
             }
         });
-    };
+    }
 
-    const send_message = (message, info_id) => {
+    function send_message(message, info_id) {
         if (config.consumable_list.includes(info_id)) {
             if (config.private_message) {
                 command.message(message);
@@ -197,14 +197,14 @@ module.exports = function Consumable_Notifier(mod) {
             const consumable_index = current_consumables.indexOf(info_id);
             current_consumables.splice(consumable_index, 1);
         }
-    };
+    }
 
-    const check_config_file = () => {
+    function check_config_file() {
         if (!Array.isArray(config.consumable_list)) {
             config.consumable_list = [];
             mod.error('Invalid consumable list settings detected default settings will be applied.');
         }
-    };
+    }
 
     let ui = null;
 
