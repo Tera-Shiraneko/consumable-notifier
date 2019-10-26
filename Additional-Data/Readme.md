@@ -13,7 +13,11 @@
 | Strong Bravery Potion | 4833 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Bravery_Potion.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/150533/) |
 | Elite Canephora Potion | 4953 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Canephora_Potion.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/150543/) |
 | Strong Canephora Potion | 4955 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Canephora_Potion.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/150535/) |
+| Refreshing Steamed Kirash | 70205 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Refreshing_Steamed_Kirash.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206054/) |
+| Astonishing Steamed Kirash | 70206 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Astonishing_Steamed_Kirash.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206055/) |
 | Boiled Egg | 70214 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Boiled_Egg.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206010/) |
+| [Special] Refreshing Steamed Kirash | 70215 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Special_Refreshing_Steamed_Kirash.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206058/) |
+| [Special] Astonishing Steamed Kirash | 70216 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Special_Astonishing_Steamed_Kirash.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206059/) |
 | Fish Fry | 70226 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Fish_Fry.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206011/) |
 | Steamed Fish | 70227 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Steamed_Fish.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206012/) |
 | Fish Soup | 70228 | ![Image didn't load... try refresh](/Additional-Data/Consumable-Icons/Fish_Soup.png?raw=true) | [Consumable Tooltip](https://teralore.com/us/item/206013/) |
