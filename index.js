@@ -111,7 +111,7 @@ module.exports = function Consumable_Notifier(mod) {
 
     function start_searching() {
         if ((config.private_message || config.dungeon_message) && config.consumable_list.length) {
-            search_timer = mod.setInterval(active_abnormalities, 1000);
+            search_timer = mod.setInterval(active_abnormalities, 1000n);
         }
     }
 
@@ -160,7 +160,7 @@ module.exports = function Consumable_Notifier(mod) {
         const matching = config.consumable_list.some(consumable => consumable === info.id);
         if (matching && !current_consumables.includes(info.id)) {
             current_consumables.push(info.id);
-            status_timer = mod.setTimeout(abnormality_status, info.remaining - 500, info);
+            status_timer = mod.setTimeout(abnormality_status, info.remaining - 500n, info);
         }
     }
 
@@ -175,7 +175,7 @@ module.exports = function Consumable_Notifier(mod) {
                 search_status();
             }
             else if (abnormality.id === matching_id && abnormality.remaining != info.remaining) {
-                status_timer = mod.setTimeout(abnormality_status, abnormality.remaining - 500, abnormality);
+                status_timer = mod.setTimeout(abnormality_status, abnormality.remaining - 500n, abnormality);
             }
         });
     }
